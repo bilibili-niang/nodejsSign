@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "axios": "^0.25.0",
+    "blueimp-md5": "^2.19.0",
+    "bootstrap-icons": "^1.8.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cros": "^1.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1",
+    "formidable": "^2.0.1",
+    "highlight.js": "^11.3.1",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "info": "0.0.6-beta.0",
+    "mongoose": "^6.0.11",
+    "multer": "^1.4.4",
+    "multiparty": "^4.2.2",
+    "node": "^16.11.1",
+    "request": "^2.88.2",
+    "showdown": "^1.9.1",
+    "silly-datetime": "^0.1.2",
+    "template_js": "^2.4.0",
+    "underscore": "^1.13.1",
+    "webp-converter": "^2.3.3"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.4.1",
+    "dateformat": "^5.0.2",
+    "express-session": "^1.17.2",
+    "html-minifier": "^4.0.0",
+    "jquery": "^3.2.1",
+    "marked": "^3.0.8",
+    "nodemon": "^2.0.7"
+  }
+}

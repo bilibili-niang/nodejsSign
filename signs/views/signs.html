@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{include './common/header.html'}}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>签名查看</title>
+</head>
+<div class="container">
+	<div class="selCon">
+		<p>如要下载,请直接右键下载或长按保存</p>
+		<a class="btn btn-light" href="/" role="button">返回签名</a>
+		<button type="button" class="btn btn-light" id='delAll'>点击删除所有签名</button>
+	</div>
+	<img src="" alt="" width=800 height=500 class="tmp">
+</div>
+<div class="verttify">
+	<p>请输入你的密码:</p>
+	<input type="text" class="pas">
+	<div class="title">
+		<button class="close">关闭</button>
+		<button class="subTitle">确认</button>
+	</div>
+</div>
+<body>
+<script>
+	<!--init-->
+	$.ajax({
+		url: '/getsigns',
+		type: 'get',
+		success: function (res) {
+			const data = res.data
+			$(data).each(function (index, item) {
+				const tmp = $('.tmp:first').clone()
+				$(tmp).attr('src', item)
+				$('.tmp:first').before($(tmp))
+			})
+			$('.tmp:first').hide()
+		},
+		error: function (e) {
+			console.log(e)
+		}
+	})
+	$('#delAll').click(function () {
+		console.log('删除~')
+		$('.verttify').toggleClass('verttifyShow')
+	})
+	$('.close').click(function () {
+		$('.verttify').removeClass('verttifyShow')
+	})
+	$('.subTitle').click(function () {
+		const val = $('pas').val()
+		console.log(`密码:${val}`)
+		if (val == '11223344') {
+			$.ajax({
+				url: '/delAllSigns',
+				type: 'get',
+				success: function (res) {
+					console.log(res)
+				},
+				error: function (e) {
+					console.log(e)
+				}
+			})
+			alert('已删除,点击确定自动刷新页面~')
+			window.location.reload()
+		} else {
+			alert('密码错误!')
+		}
+	})
+</script>
+</body>
+</html>

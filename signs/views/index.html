@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{include './common/header.html'}}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <title>sign</title>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #C5C5C5;
+            display: block;
+            overflow: hidden;
+        }
+
+        .actions {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .actions > svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .actions svg.active {
+            fill: orangered;
+            transform: scale(1.4);
+        }
+
+        .colors > li {
+            margin: 1rem 0;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 3px black;
+        }
+
+        .cursor1 {
+            cursor: url('ico/black.ico') 8 20, auto;
+        }
+    </style>
+</head>
+
+<body>
+<img src="" class="imgOne" alt="" width=200 height=200>
+<canvas id="canvas" class="cursor1" width="500" height="500"></canvas>
+<div id="actions" class="actions">
+    <button type="button" class="btn btn-light" onclick="getpng()">提交</button>
+    <a class="btn btn-light" href="/signs" role="button">查看签名</a>
+    <p>如要下载签名请跳转浏览器</p>
+    <svg id="brush" class="icon active">
+        <use xlink:href="#icon-pencil"></use>
+    </svg>
+    <svg id="eraser" class="icon">
+        <use xlink:href="#icon-xiangpica2"></use>
+    </svg>
+    <svg id="save" class="icon">
+        <use xlink:href="#icon-xiazai"></use>
+    </svg>
+    <svg id="clear" class="icon">
+        <use xlink:href="#icon-delete"></use>
+    </svg>
+</div>
+<script src="../static/js/index.js"></script>
+</body>
+</html>
